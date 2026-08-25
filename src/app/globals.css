@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/*
+ * 디자인 토큰. 확정된 CONTINUE? 아이덴티티를 그대로 옮긴 값이다.
+ *   마젠타 #FF2E88 / 딥블랙 #0D0D12 / 커서 블록(꽉 찬 사각형) 모티프
+ * 강조색은 마젠타 하나뿐이다. 트랙별 색 구분은 하지 않는다.
+ */
+@theme {
+  --color-bg: #0d0d12;
+  --color-surface: #15151c;
+  --color-line: #26262f;
+  --color-ink: #f4f4f6;
+  /* 본문용 회색. 인쇄물의 #5A5A5A 를 그대로 쓰면 딥블랙 위에서 읽히지 않아 밝게 잡았다. */
+  --color-muted: #a0a0ac;
+  --color-dim: #6b6b78;
+  --color-accent: #ff2e88;
+
+  --font-sans: var(--font-pretendard), system-ui, sans-serif;
+  --font-display: var(--font-anton), var(--font-pretendard), sans-serif;
+}
+
+@font-face {
+  font-family: "PretendardLocal";
+  src: url("./fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PretendardLocal";
+  src: url("./fonts/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PretendardLocal";
+  src: url("./fonts/Pretendard-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 고정 헤더에 제목이 가리지 않도록 앵커 이동 위치를 내린다. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: "PretendardLocal", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 언더스코어를 대신하는 커서 블록. 로고와 제목 끝에 붙는다. */
+.cursor-block {
+  display: inline-block;
+  width: 0.36em;
+  height: 0.82em;
+  margin-left: 0.1em;
+  background: var(--color-accent);
+  vertical-align: -0.06em;
+}
+
+/* 타이핑 중 글자 끝을 따라가는 캐럿. 터미널 커서처럼 깜빡인다. */
+.caret {
+  animation: caret-blink 1.06s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+ * 마우스 포인터를 커서 블록으로 바꾼다.
+ *
+ * 모양만 바꾸면 "무엇이 눌리는가"를 알 수 없게 되므로 두 벌을 둔다.
+ *   기본      — 속이 빈 사각형
+ *   누를 수 있는 것 — 속이 찬 사각형
+ * 손가락 모양이 사라지는 대신 "가리키면 커서가 채워진다"가 그 자리를 대신한다.
+ *
+ * pointer: fine 은 마우스가 있는 환경만 고른다. 터치 기기에는 포인터가 없어
+ * 규칙을 적용할 이유가 없다.
+ */
+@media (pointer: fine) {
+  :root {
+    --cursor-hollow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='6.5' y='2.5' width='9' height='17' fill='none' stroke='%23ff2e88' stroke-width='2'/%3E%3C/svg%3E")
+      11 11;
+    --cursor-solid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='6' y='2' width='10' height='18' fill='%23ff2e88'/%3E%3C/svg%3E")
+      11 11;
+  }
+
+  body {
+    cursor: var(--cursor-hollow), default;
+  }
+
+  a,
+  button,
+  summary,
+  label,
+  [role="button"] {
+    cursor: var(--cursor-solid), pointer;
+  }
+
+  /* 글자를 고르거나 값을 넣는 곳은 원래 모양이 있어야 한다. */
+  input,
+  textarea,
+  select {
+    cursor: auto;
+  }
+}
+
+/* 영문·숫자 디스플레이용. 한글에는 절대 쓰지 않는다(Anton은 라틴 전용). */
+.display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
