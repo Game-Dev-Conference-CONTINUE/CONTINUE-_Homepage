@@ -3,6 +3,13 @@
 동명대학교 게임 개발 동아리 연합이 여는 게임 개발 컨퍼런스 **GAME OVER?** (약칭 GO) 의 공식 홈페이지입니다.
 Next.js(App Router) + TypeScript + Tailwind CSS v4 로 만들어졌고, 모든 페이지가 정적으로 생성되어 GitHub Pages 에 배포됩니다.
 
+**공개 주소** — https://game-dev-conference-continue.github.io/GAMEOVER_Homepage/
+
+> 저장소 이름을 바꾸면 이 주소도 함께 바뀌고 **예전 주소는 되살아나지 않습니다.**
+> 이름을 바꾼 뒤에는 반드시 Actions 에서 워크플로를 다시 돌려야 합니다.
+> 페이지 안의 자원 경로(`/저장소이름/_next/...`)가 빌드할 때 구워지기 때문에,
+> 다시 빌드하지 않으면 화면이 스타일 없이 깨진 채로 남습니다.
+
 UPTRAND 홈페이지와 같은 구조를 씁니다. 운영 방식이 동일하므로 한쪽을 다뤄 봤다면 그대로 통합니다.
 
 ## 운영하시는 분께
