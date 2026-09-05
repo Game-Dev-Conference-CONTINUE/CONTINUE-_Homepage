@@ -6,33 +6,39 @@ export function Footer() {
 
   return (
     <>
-      {/* 마지막 신청 유도. 페이지 끝까지 읽은 사람이 다시 위로 올라가지 않게 둔다. */}
-      <section className="border-t border-line bg-accent px-6 py-20 text-bg md:px-10">
-        <div className="mx-auto w-full max-w-5xl">
-          <p className="display text-sm tracking-[0.18em] uppercase">Join us</p>
-          <h2 className="mt-3 text-3xl leading-tight font-extrabold md:text-4xl">
+      {/*
+        * 마지막 신청 유도. 페이지 끝까지 읽은 사람이 다시 위로 올라가지 않게 둔다.
+        * 넓은 면을 마젠타로 채우면 눈이 아프다는 의견이 있어 테두리로만 강조한다.
+        */}
+      <section className="border-t border-line px-6 py-20 md:px-10">
+        <div className="mx-auto w-full max-w-5xl border-2 border-accent p-8 md:p-12">
+          <p className="display text-sm tracking-[0.18em] text-accent uppercase">Join us</p>
+          <h2 className="mt-3 text-3xl leading-tight font-extrabold text-ink md:text-4xl">
             {site.dateLabel}, 만나요
           </h2>
-          <p className="mt-4 max-w-xl leading-relaxed">
+          <p className="mt-4 max-w-xl leading-relaxed text-muted">
             {site.fee} · {site.venue}
-            {site.applyDeadline && ` · 신청 마감 ${site.applyDeadline}`}
+            {site.applyUrl && site.applyDeadline && ` · 신청 마감 ${site.applyDeadline}`}
           </p>
           <div className="mt-8">
-            {site.applyUrl ? (
+            {site.applyUrl || site.surveyUrl ? (
               <a
-                href={site.applyUrl}
+                href={site.applyUrl || site.surveyUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="inline-flex bg-bg px-7 py-4 text-base font-bold text-ink hover:brightness-125"
+                className="inline-flex bg-accent px-7 py-4 text-base font-bold text-bg hover:brightness-110"
               >
-                참가 신청하기
+                {site.applyUrl ? "참가 신청하기" : "수요조사 참여하기"}
               </a>
             ) : (
-              <span className="inline-flex bg-bg/20 px-7 py-4 text-base font-bold">
+              <span className="inline-flex border border-line px-7 py-4 text-base font-bold text-dim">
                 참가 신청 준비 중
               </span>
             )}
           </div>
+          {!site.applyUrl && site.surveyUrl && site.surveyNote && (
+            <p className="mt-4 max-w-xl text-sm text-dim">{site.surveyNote}</p>
+          )}
         </div>
       </section>
 

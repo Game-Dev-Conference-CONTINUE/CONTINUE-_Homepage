@@ -18,6 +18,9 @@ export type Site = {
   fee: string;
   applyUrl: string;
   applyDeadline: string;
+  /** 신청 전 단계에서 받는 수요조사 폼. 신청 주소가 비었을 때 대신 안내한다. */
+  surveyUrl: string;
+  surveyNote: string;
   email: string;
   url: string;
   shareImage: string | null;
@@ -28,9 +31,12 @@ export type About = {
   lead: string;
   body: string[];
   excluded: string[];
+  /** 발표 구성 묶음의 제목과 덧말. 칸 수가 바뀌어도 코드를 고치지 않도록 글은 여기 둔다. */
+  structureTitle: string;
+  structureNote: string;
 };
 
-/** 모든 강연이 따르는 4단. */
+/** 모든 강연이 지나는 칸. 시작과 끝만 정하고 사이는 연사에게 맡긴다. */
 export type StructureStep = {
   no: string;
   name: string;
@@ -111,7 +117,8 @@ export function minutes(hhmm: string): number {
   return m ? Number(m[1]) * 60 + Number(m[2]) : 0;
 }
 
-/** 시작 시각이 같은 줄끼리 묶는다. 오후 병렬 트랙을 한 행에 나란히 놓기 위한 것. */
+/** 시작 시각이 같은 줄끼리 묶는다. 지금은 트랙을 나누지 않아 대개 한 줄이지만,
+ *  병렬 세션이 생겨도 한 행에 나란히 놓이도록 묶는 구조를 남겨 둔다. */
 export function groupByStart(entries: Entry[]): { start: string; end: string; items: Entry[] }[] {
   const map = new Map<string, Entry[]>();
   for (const e of entries) {

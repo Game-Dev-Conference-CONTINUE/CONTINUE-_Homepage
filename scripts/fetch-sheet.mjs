@@ -90,7 +90,7 @@ function checkContent(content) {
 
   /*
    * 같은 트랙 안에서 시간이 겹치면 한 사람이 두 곳에 있어야 한다.
-   * 오후 병렬 트랙을 손으로 적다 보면 실제로 자주 생기는 실수라 미리 잡는다.
+   * 시각을 손으로 적다 보면 실제로 자주 생기는 실수라 미리 잡는다.
    */
   const byKind = new Map();
   for (const e of content.schedule) {
@@ -112,7 +112,7 @@ function checkContent(content) {
     }
   }
 
-  /* 4단 구성은 이 행사의 뼈대라 비면 안 된다. */
+  /* 발표 구성은 이 행사의 뼈대라 비면 안 된다. */
   if (content.structure.length === 0) problems.push("강연구성이 비어 있습니다.");
 
   /*
@@ -125,10 +125,14 @@ function checkContent(content) {
         "(영문 소문자·숫자·하이픈, 예: keynote)",
     );
 
-  /* 신청 주소를 적었는데 형식이 틀리면 버튼이 엉뚱한 곳으로 간다. */
-  const apply = content.site.applyUrl;
-  if (apply && !/^https?:\/\//.test(apply))
-    problems.push(`신청 주소 "${apply}"는 http:// 또는 https:// 로 시작해야 합니다.`);
+  /* 주소를 적었는데 형식이 틀리면 버튼이 엉뚱한 곳으로 간다. */
+  for (const [label, url] of [
+    ["신청 주소", content.site.applyUrl],
+    ["수요조사 주소", content.site.surveyUrl],
+  ]) {
+    if (url && !/^https?:\/\//.test(url))
+      problems.push(`${label} "${url}"는 http:// 또는 https:// 로 시작해야 합니다.`);
+  }
 
   return problems;
 }

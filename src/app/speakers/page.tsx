@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function SpeakersPage() {
-  const { speakerGuide: g, structure, site } = content;
+  const { speakerGuide: g, structure, about, site } = content;
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function SpeakersPage() {
             {[
               ["행사", `${site.dateLabel} ${site.timeLabel}`],
               ["장소", site.venue],
-              ["발표", "35분 발표 + 10분 질의응답"],
+              ["발표", "35분 (질의응답 포함)"],
               ["자료 제출 마감", g.deadline],
             ].map(([k, v]) => (
               <div key={k} className="bg-bg p-6">
@@ -44,37 +44,27 @@ export default function SpeakersPage() {
           <div className="mt-14">
             <h2 className="text-xl font-bold text-ink">발표 구성</h2>
             <ol className="mt-6 space-y-3">
-              {structure.map((s) => {
-                const hot = s.no === "03";
-                return (
-                  <li
-                    key={s.no}
-                    className={
-                      "flex gap-5 border p-5 " +
-                      (hot ? "border-accent bg-accent/5" : "border-line")
-                    }
-                  >
-                    <span className="display shrink-0 text-2xl text-accent">{s.no}</span>
-                    <div>
-                      <p className="font-bold text-ink">{s.name}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-muted">{s.desc}</p>
-                    </div>
-                  </li>
-                );
-              })}
+              {structure.map((s) => (
+                <li key={s.no} className="flex gap-5 border border-line p-5">
+                  <span className="display shrink-0 text-2xl text-accent">{s.no}</span>
+                  <div>
+                    <p className="font-bold text-ink">{s.name}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">{s.desc}</p>
+                  </div>
+                </li>
+              ))}
             </ol>
-            <p className="mt-5 text-sm text-dim">
-              셋째 칸이 비면 발표가 성립하지 않습니다. 잃은 것을 기간 · 범위 · 팀 · 완성도처럼
-              구체적으로 적어 주세요.
-            </p>
+            {about.structureNote && (
+              <p className="mt-5 text-sm leading-relaxed text-dim">{about.structureNote}</p>
+            )}
           </div>
 
           {(g.templateDark || g.templateLight) && (
             <div className="mt-14">
               <h2 className="text-xl font-bold text-ink">발표 자료 템플릿</h2>
               <p className="mt-3 text-muted">
-                네 칸이 이미 배치되어 있습니다. 강연장 프로젝터가 확정되기 전이라 두 벌을 두었으니
-                밝은 화면이 걱정되면 라이트 버전을 쓰세요.
+                발표 구성이 이미 배치되어 있습니다. 강연장 프로젝터가 확정되기 전이라 두 벌을
+                두었으니 밝은 화면이 걱정되면 라이트 버전을 쓰세요.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button href={g.templateDark} external disabledLabel="다크 버전 준비 중">

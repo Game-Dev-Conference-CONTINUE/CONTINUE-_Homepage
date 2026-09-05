@@ -18,35 +18,29 @@ export function AboutSection() {
         ))}
       </div>
 
-      {/* 모든 강연이 따르는 4단. 이 행사의 뼈대라 가장 눈에 띄게 둔다. */}
+      {/*
+        * 모든 강연이 지나는 칸. 시작과 끝만 정하고 사이는 연사가 채운다.
+        * 칸 수가 바뀔 수 있으므로 개수를 글에도 격자에도 박지 않는다.
+        */}
       <div className="mt-16">
-        <h3 className="text-xl font-bold text-ink">모든 강연은 이 네 칸을 지납니다</h3>
-        <ol className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {structure.map((s) => {
-            /* 셋째 칸이 이 행사의 핵심이라 색을 뒤집어 강조한다. */
-            const hot = s.no === "03";
-            return (
-              <li
-                key={s.no}
-                className={"p-6 " + (hot ? "bg-accent text-bg" : "bg-bg text-ink")}
-              >
-                <p className={"display text-3xl " + (hot ? "text-bg" : "text-accent")}>{s.no}</p>
-                <p className="mt-3 font-bold">{s.name}</p>
-                <p
-                  className={
-                    "display mt-1 text-[0.7rem] tracking-widest uppercase " +
-                    (hot ? "text-bg/70" : "text-dim")
-                  }
-                >
-                  {s.en}
-                </p>
-                <p className={"mt-3 text-sm leading-relaxed " + (hot ? "text-bg" : "text-muted")}>
-                  {s.desc}
-                </p>
-              </li>
-            );
-          })}
+        <h3 className="text-xl font-bold text-ink">{about.structureTitle}</h3>
+        <ol className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2">
+          {structure.map((s) => (
+            <li key={s.no} className="bg-bg p-6 text-ink">
+              <p className="display text-3xl text-accent">{s.no}</p>
+              <p className="mt-3 font-bold">{s.name}</p>
+              <p className="display mt-1 text-[0.7rem] tracking-widest text-dim uppercase">
+                {s.en}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{s.desc}</p>
+            </li>
+          ))}
         </ol>
+        {about.structureNote && (
+          <p className="mt-5 border-l-2 border-accent pl-4 text-sm leading-relaxed text-muted">
+            {about.structureNote}
+          </p>
+        )}
       </div>
 
       {/* 무엇이 아닌지를 밝히는 것이 성격을 잡는 절반이다. */}

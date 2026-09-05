@@ -25,14 +25,14 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          {site.applyUrl ? (
+          {site.applyUrl || site.surveyUrl ? (
             <a
-              href={site.applyUrl}
+              href={site.applyUrl || site.surveyUrl}
               target="_blank"
               rel="noreferrer noopener"
               className="bg-accent px-4 py-2 font-bold text-bg hover:brightness-110"
             >
-              참가 신청
+              {site.applyUrl ? "참가 신청" : "수요조사"}
             </a>
           ) : (
             <span className="border border-line px-4 py-2 text-dim">신청 준비 중</span>

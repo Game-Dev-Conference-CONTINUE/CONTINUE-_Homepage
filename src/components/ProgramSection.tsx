@@ -6,9 +6,9 @@ import { Eyebrow, Lead, Section, Tag, Title } from "./ui";
 /**
  * 타임테이블.
  *
- * 시작 시각이 같은 줄을 한 행에 나란히 놓는다. 오전 공통 세션은 한 칸,
- * 오후 병렬 트랙은 세 칸이 되어 "같은 시간에 무엇을 고를 수 있는가"가 그대로 보인다.
- * 트랙별 색 구분은 하지 않는다. 강조색은 마젠타 하나뿐이다.
+ * 트랙을 나누지 않으므로 한 시각에 한 줄만 선다. 시작 시각이 같은 줄을 한 행에
+ * 묶는 구조는 그대로 두었다. 나중에 병렬 세션이 생겨도 코드를 고칠 필요가 없다.
+ * 주제별 색 구분은 하지 않는다. 강조색은 마젠타 하나뿐이다.
  */
 export function ProgramSection() {
   const { schedule, tracks } = content;
@@ -19,8 +19,8 @@ export function ProgramSection() {
       <Eyebrow>Program</Eyebrow>
       <Title>타임테이블</Title>
       <Lead>
-        오전은 전원이 함께 듣고, 오후는 세 트랙이 나란히 진행됩니다. 세 트랙의 시작·종료 시각을
-        맞춰 두어 세션 단위로 옮겨 다닐 수 있습니다.
+        트랙을 나누지 않습니다. 한 공간에서 모든 발표를 이어서 듣습니다. 세션은 35분, 쉬는
+        시간은 15분입니다.
       </Lead>
 
       <ul className="mt-8 flex flex-wrap gap-2">

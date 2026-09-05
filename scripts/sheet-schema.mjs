@@ -116,16 +116,18 @@ export const TABS = [
     kind: "kv",
     note: "행사 이름, 날짜, 신청 주소처럼 한 번 적고 거의 안 바뀌는 값들",
     fields: [
-      ["행사명", "site.name", "예: CONTINUE?"],
+      ["행사명", "site.name", "예: GAME OVER?"],
       ["슬로건", "site.slogan", "히어로 큰 문구"],
       ["한 줄 소개", "site.lead", "슬로건 아래 설명 한 줄"],
       ["날짜", "site.dateLabel", "예: 2026년 10월 31일 (토)"],
-      ["시간", "site.timeLabel", "예: 09:30 ~ 18:30"],
-      ["장소", "site.venue", "예: 동명대학교 도서관 지하 대강연장"],
+      ["시간", "site.timeLabel", "예: 09:30 ~ 18:10"],
+      ["장소", "site.venue", "예: 동명대학교 (강의실 확정 후 공지)"],
       ["주최", "site.host", "푸터 표기"],
       ["참가비", "site.fee", "예: 무료"],
       ["신청 주소", "site.applyUrl", "구글 폼 주소. 비우면 신청 버튼이 '준비 중'으로 보입니다"],
-      ["신청 마감", "site.applyDeadline", "예: 10월 24일 (금)"],
+      ["신청 마감", "site.applyDeadline", "예: 10월 24일 (토)"],
+      ["수요조사 주소", "site.surveyUrl", "신청을 열기 전 받는 폼. 신청 주소가 비어 있을 때 이 버튼이 대신 나옵니다"],
+      ["수요조사 안내", "site.surveyNote", "수요조사 버튼 아래 한 줄"],
       ["문의 메일", "site.email", ""],
       ["사이트 주소", "site.url", "https:// 로 시작하는 배포 주소"],
       ["공유 이미지", "site.shareImage", "카톡 등에 링크를 붙였을 때 뜨는 그림"],
@@ -151,12 +153,16 @@ export const TABS = [
       ["리드 문장", "about.lead", "가장 굵게 나오는 한 문장"],
       ["본문", "about.body", "한 줄이 한 문단이 됩니다"],
       ["이런 발표가 아닙니다", "about.excluded", "한 줄에 하나씩"],
+      ["발표 구성 제목", "about.structureTitle", "강연구성 표 위에 나오는 문장"],
+      ["발표 구성 덧말", "about.structureNote", "강연구성 표 아래 작은 글씨"],
     ],
     read(get, draft) {
       const t = get("제목"); if (t !== undefined) draft.about.title = text(t);
       const l = get("리드 문장"); if (l !== undefined) draft.about.lead = text(l);
       const b = get("본문"); if (b !== undefined) draft.about.body = lines(b);
       const e = get("이런 발표가 아닙니다"); if (e !== undefined) draft.about.excluded = lines(e);
+      const st = get("발표 구성 제목"); if (st !== undefined) draft.about.structureTitle = text(st);
+      const sn = get("발표 구성 덧말"); if (sn !== undefined) draft.about.structureNote = text(sn);
     },
     write(content) {
       return [
@@ -164,6 +170,8 @@ export const TABS = [
         ["리드 문장", content.about.lead, "가장 굵게 나오는 한 문장"],
         ["본문", linesOut(content.about.body), "한 줄이 한 문단이 됩니다"],
         ["이런 발표가 아닙니다", linesOut(content.about.excluded), "한 줄에 하나씩"],
+        ["발표 구성 제목", content.about.structureTitle, "강연구성 표 위에 나오는 문장"],
+        ["발표 구성 덧말", content.about.structureNote, "강연구성 표 아래 작은 글씨"],
       ];
     },
   },
@@ -171,7 +179,7 @@ export const TABS = [
   {
     name: "강연구성",
     kind: "rows",
-    note: "모든 강연이 따르는 4단. 순서대로 적으세요",
+    note: "모든 강연이 지나는 칸. 시작과 끝만 정하고 사이는 연사에게 맡깁니다. 순서대로 적으세요",
     header: ["번호", "이름", "영문", "설명"],
     read: (rows, draft) => {
       draft.structure = rows.map((r) => ({
@@ -184,7 +192,7 @@ export const TABS = [
   {
     name: "트랙",
     kind: "rows",
-    note: "오후 병렬 트랙. 주소이름은 영문 소문자·숫자·하이픈만 씁니다",
+    note: "발표 주제 구분. 트랙을 나누지 않으므로 표식으로만 쓰입니다. 주소이름은 영문 소문자·숫자·하이픈만 씁니다",
     header: ["주소이름", "이름", "설명"],
     read: (rows, draft) => {
       draft.tracks = rows.map((r) => ({ slug: text(r[0]), name: text(r[1]), desc: text(r[2]) }));

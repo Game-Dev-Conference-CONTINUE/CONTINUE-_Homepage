@@ -2,16 +2,18 @@
   "site": {
     "name": "GAME OVER?",
     "slogan": "망한 줄 알았는데,\n경험치였습니다.",
-    "lead": "실패한 프로젝트에서 실제로 무엇을 건졌는지, 먼저 겪어본 사람들이 이야기합니다.",
+    "lead": "주제는 인디 & 기업입니다. 직접 만들어 본 사람과 지금 업계에서 일하는 사람이, 잘된 이야기보다 잘못된 이야기를 합니다.",
     "dateLabel": "2026년 10월 31일 (토)",
-    "timeLabel": "09:30 ~ 18:30",
-    "venue": "동명대학교 (장소 확정 예정)",
+    "timeLabel": "09:30 ~ 18:10",
+    "venue": "동명대학교 (강의실 확정 후 공지)",
     "host": "동명대학교 게임 개발 동아리 연합 · UPTRAND × 기즈모",
     "fee": "무료",
     "applyUrl": "",
-    "applyDeadline": "10월 24일 (금)",
-    "email": "",
-    "url": "",
+    "applyDeadline": "10월 24일 (토)",
+    "surveyUrl": "https://docs.google.com/forms/d/e/1FAIpQLSefhkkrg8fb6WtDYU2QGqXz9QpTJCbS_bD-u9XOJfiRENVHew/viewform",
+    "surveyNote": "정식 신청은 10월 초에 이 페이지에서 열립니다. 지금은 수요조사만 받고 있습니다.",
+    "email": "continueadmin@gmail.com",
+    "url": "https://game-dev-conference-gameover.github.io/GAMEOVER_Homepage/",
     "shareImage": null
   },
   "about": {
@@ -20,14 +22,17 @@
     "body": [
       "동아리에서 매 학기 같은 일이 반복됩니다. 프로젝트가 중간에 엎어지고, 팀이 깨집니다. 그런데 원인을 뜯어보면 기술이 부족해서가 아니라 구현 범위를 잘못 잡았거나, 일정을 못 지켰거나, 역할 분배에서 틀어진 경우가 대부분입니다.",
       "선배들이 이미 겪고 넘어간 문제를 후배들이 처음부터 다시 밟고 있습니다. 개별 동아리 안의 구전만으로는 이 반복이 끊기지 않습니다.",
-      "그래서 이 자리의 연사는 자기가 잘한 것을 소개하지 않습니다. 실제로 내렸던 판단과 그 결과를 — 실패한 판단을 포함해서 — 공유합니다."
+      "그래서 이 자리의 연사는 자기가 잘한 것을 소개하지 않습니다. 실제로 내렸던 판단과 그 결과를 — 실패한 판단을 포함해서 — 공유합니다.",
+      "주제는 두 갈래입니다. 오전에는 현업에서 일하는 분들이 게임 업계가 지금 어떻게 돌아가는지 이야기하고, 오후에는 직접 만들어 본 사람들이 프로젝트에서 실제로 벌어진 일을 풉니다. 트랙을 나누지 않아 한 공간에서 모든 발표를 이어서 듣습니다."
     ],
     "excluded": [
       "포트폴리오·게임 소개 위주의 발표",
       "기술 입문 튜토리얼",
       "기업 채용 설명회 및 회사 홍보",
       "학술 논문 발표"
-    ]
+    ],
+    "structureTitle": "모든 강연은 여기서 시작해 여기서 끝납니다",
+    "structureNote": "사이를 어떻게 채울지는 연사에게 맡깁니다. 형식을 맞추는 것보다 실제로 겪은 이야기가 나오는 편이 중요합니다."
   },
   "structure": [
     {
@@ -38,18 +43,6 @@
     },
     {
       "no": "02",
-      "name": "판단",
-      "en": "DECISION",
-      "desc": "그때 어떤 선택지가 있었고, 무엇을 선택했나"
-    },
-    {
-      "no": "03",
-      "name": "결과",
-      "en": "RESULT",
-      "desc": "그래서 무슨 일이 벌어졌나 — 실패와 대가가 반드시 포함됩니다"
-    },
-    {
-      "no": "04",
       "name": "다시 한다면",
       "en": "IF I DID IT AGAIN",
       "desc": "후배가 지금 자기 팀에 바로 적용할 수 있는 기준"
@@ -57,19 +50,14 @@
   ],
   "tracks": [
     {
-      "slug": "design",
-      "name": "기획",
-      "desc": "게임 디자인, 밸런싱, 기획서, 시장 분석"
+      "slug": "industry",
+      "name": "기업",
+      "desc": "게임 회사가 지금 어떻게 돌아가는지 · 오전"
     },
     {
-      "slug": "art",
-      "name": "아트",
-      "desc": "원화, 2D/3D, UI/UX, 아트 파이프라인"
-    },
-    {
-      "slug": "programming",
-      "name": "프로그래밍",
-      "desc": "엔진, 그래픽스, 클라이언트·서버, 최적화"
+      "slug": "indie",
+      "name": "인디",
+      "desc": "직접 만들어 본 사람들의 프로젝트 이야기 · 오후"
     }
   ],
   "schedule": [
@@ -80,7 +68,7 @@
       "title": "접수 및 등록",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장 로비",
+      "room": "",
       "slug": "",
       "summary": "",
       "photo": null
@@ -92,26 +80,26 @@
       "title": "개회식",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장",
+      "room": "",
       "slug": "",
       "summary": "",
       "photo": null
     },
     {
       "start": "10:15",
-      "end": "11:05",
+      "end": "10:50",
       "kind": "공통",
       "title": "키노트",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장",
+      "room": "",
       "slug": "keynote",
-      "summary": "연사 섭외 중입니다.",
+      "summary": "이 자리를 왜 여는지부터 이야기합니다.",
       "photo": null
     },
     {
-      "start": "11:05",
-      "end": "11:15",
+      "start": "10:50",
+      "end": "11:05",
       "kind": "휴식",
       "title": "휴식",
       "speaker": "",
@@ -122,27 +110,51 @@
       "photo": null
     },
     {
-      "start": "11:15",
-      "end": "12:00",
-      "kind": "공통",
+      "start": "11:05",
+      "end": "11:40",
+      "kind": "기업",
       "title": "공통 세션 1",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장",
-      "slug": "common-1",
-      "summary": "프로젝트 운영 · 팀 운영 층위. 연사 섭외 중입니다.",
+      "room": "",
+      "slug": "industry-1",
+      "summary": "게임 업계 현황. 현업에서 일하는 분이 발표합니다.",
       "photo": null
     },
     {
-      "start": "12:00",
-      "end": "12:45",
-      "kind": "공통",
+      "start": "11:40",
+      "end": "11:55",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
+      "photo": null
+    },
+    {
+      "start": "11:55",
+      "end": "12:30",
+      "kind": "기업",
       "title": "공통 세션 2",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장",
-      "slug": "common-2",
-      "summary": "프로젝트 운영 · 팀 운영 층위. 연사 섭외 중입니다.",
+      "room": "",
+      "slug": "industry-2",
+      "summary": "게임 업계 현황. 현업에서 일하는 분이 발표합니다.",
+      "photo": null
+    },
+    {
+      "start": "12:30",
+      "end": "12:45",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
       "photo": null
     },
     {
@@ -159,168 +171,120 @@
     },
     {
       "start": "13:45",
-      "end": "14:30",
-      "kind": "기획",
-      "title": "기획 세션 1",
+      "end": "14:20",
+      "kind": "인디",
+      "title": "세션 1",
       "speaker": "",
       "affiliation": "",
-      "room": "강의실 A",
-      "slug": "design-1",
-      "summary": "연사 섭외 중입니다.",
+      "room": "",
+      "slug": "indie-1",
+      "summary": "학교 팀 · 게임잼 · 개인 프로젝트에서 실제로 벌어진 일.",
       "photo": null
     },
     {
-      "start": "13:45",
-      "end": "14:30",
-      "kind": "아트",
-      "title": "아트 세션 1",
+      "start": "14:20",
+      "end": "14:35",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
       "speaker": "",
       "affiliation": "",
-      "room": "강의실 B",
-      "slug": "art-1",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "13:45",
-      "end": "14:30",
-      "kind": "프로그래밍",
-      "title": "프로그래밍 세션 1",
-      "speaker": "",
-      "affiliation": "",
-      "room": "대강연장",
-      "slug": "programming-1",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "14:40",
-      "end": "15:25",
-      "kind": "기획",
-      "title": "기획 세션 2",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 A",
-      "slug": "design-2",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "14:40",
-      "end": "15:25",
-      "kind": "아트",
-      "title": "아트 세션 2",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 B",
-      "slug": "art-2",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "14:40",
-      "end": "15:25",
-      "kind": "프로그래밍",
-      "title": "프로그래밍 세션 2",
-      "speaker": "",
-      "affiliation": "",
-      "room": "대강연장",
-      "slug": "programming-2",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "15:35",
-      "end": "16:20",
-      "kind": "기획",
-      "title": "기획 세션 3",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 A",
-      "slug": "design-3",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "15:35",
-      "end": "16:20",
-      "kind": "아트",
-      "title": "아트 세션 3",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 B",
-      "slug": "art-3",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "15:35",
-      "end": "16:20",
-      "kind": "프로그래밍",
-      "title": "프로그래밍 세션 3",
-      "speaker": "",
-      "affiliation": "",
-      "room": "대강연장",
-      "slug": "programming-3",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "16:30",
-      "end": "17:15",
-      "kind": "기획",
-      "title": "기획 세션 4",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 A",
-      "slug": "design-4",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "16:30",
-      "end": "17:15",
-      "kind": "아트",
-      "title": "아트 세션 4",
-      "speaker": "",
-      "affiliation": "",
-      "room": "강의실 B",
-      "slug": "art-4",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "16:30",
-      "end": "17:15",
-      "kind": "프로그래밍",
-      "title": "프로그래밍 세션 4",
-      "speaker": "",
-      "affiliation": "",
-      "room": "대강연장",
-      "slug": "programming-4",
-      "summary": "연사 섭외 중입니다.",
-      "photo": null
-    },
-    {
-      "start": "17:30",
-      "end": "18:20",
-      "kind": "공통",
-      "title": "네트워킹 세션",
-      "speaker": "",
-      "affiliation": "",
-      "room": "대강연장",
+      "room": "",
       "slug": "",
       "summary": "",
       "photo": null
     },
     {
-      "start": "18:20",
-      "end": "18:30",
+      "start": "14:35",
+      "end": "15:10",
+      "kind": "인디",
+      "title": "세션 2",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "indie-2",
+      "summary": "학교 팀 · 게임잼 · 개인 프로젝트에서 실제로 벌어진 일.",
+      "photo": null
+    },
+    {
+      "start": "15:10",
+      "end": "15:25",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
+      "photo": null
+    },
+    {
+      "start": "15:25",
+      "end": "16:00",
+      "kind": "인디",
+      "title": "세션 3",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "indie-3",
+      "summary": "학교 팀 · 게임잼 · 개인 프로젝트에서 실제로 벌어진 일.",
+      "photo": null
+    },
+    {
+      "start": "16:00",
+      "end": "16:15",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
+      "photo": null
+    },
+    {
+      "start": "16:15",
+      "end": "16:50",
+      "kind": "인디",
+      "title": "세션 4",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "indie-4",
+      "summary": "학교 팀 · 게임잼 · 개인 프로젝트에서 실제로 벌어진 일.",
+      "photo": null
+    },
+    {
+      "start": "16:50",
+      "end": "17:05",
+      "kind": "휴식",
+      "title": "휴식 · 세션 퀴즈",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
+      "photo": null
+    },
+    {
+      "start": "17:05",
+      "end": "18:00",
+      "kind": "공통",
+      "title": "네트워킹 세션 및 럭키 드로우",
+      "speaker": "",
+      "affiliation": "",
+      "room": "",
+      "slug": "",
+      "summary": "",
+      "photo": null
+    },
+    {
+      "start": "18:00",
+      "end": "18:10",
       "kind": "공통",
       "title": "폐회",
       "speaker": "",
       "affiliation": "",
-      "room": "대강연장",
+      "room": "",
       "slug": "",
       "summary": "",
       "photo": null
@@ -330,20 +294,22 @@
     "name": "동명대학교",
     "address": "부산광역시 남구 신선로 428",
     "transit": [
-      "장소가 확정되면 상세 안내를 올립니다."
+      "강의실은 확정되면 이 페이지에 올립니다.",
+      "부산 · 울산 지역에서 오시는 분들을 위한 안내도 함께 올리겠습니다."
     ],
     "mapUrl": "",
     "note": "토요일 개최입니다. 건물 출입 안내는 확정 후 공지합니다."
   },
   "speakerGuide": {
     "title": "연사 안내",
-    "lead": "발표는 4단 구성을 따릅니다. 셋째 칸에서 실패를 이야기하고, 넷째 칸을 남기고 내려갑니다.",
+    "lead": "발표는 「상황」으로 시작해 「다시 한다면」으로 끝납니다. 그 사이를 어떻게 채울지는 연사에게 맡깁니다.",
     "deadline": "확정 후 공지",
     "templateDark": "",
     "templateLight": "",
-    "submit": "운영위원장 메일로 보내주세요.",
+    "submit": "운영총괄 메일로 보내주세요.",
     "dayOf": [
-      "발표 35분 + 질의응답 10분",
+      "발표 35분 · 세션 사이 휴식 15분",
+      "트랙을 나누지 않아 참석자 전원이 같은 공간에서 듣습니다",
       "권장 슬라이드 수 25~35장",
       "발표 전 강연장 장비 점검 시간을 따로 마련합니다",
       "중식과 다과가 제공됩니다"
@@ -352,19 +318,23 @@
   "faq": [
     {
       "q": "누가 참석할 수 있나요?",
-      "a": "동명대학교 컴퓨터공학과·게임공학과·게임그래픽학과 재학생을 우선 대상으로 하며, 부산권 게임 관련 학과 재학생에게도 개방할 예정입니다."
+      "a": "전공과 학년에 상관없이 누구나 참석할 수 있습니다. 동명대학교 재학생을 비롯해 부산 · 울산 지역의 학생과 개발자에게 열려 있습니다. 개발 경험이 없어도 괜찮습니다."
     },
     {
       "q": "참가비가 있나요?",
-      "a": "무료입니다."
+      "a": "무료입니다. 중식과 다과도 제공합니다."
     },
     {
-      "q": "중간에 트랙을 옮겨도 되나요?",
-      "a": "됩니다. 오후 세 트랙은 시작·종료 시각을 맞춰 두어 세션 단위로 이동할 수 있습니다."
+      "q": "트랙이 나뉘나요?",
+      "a": "나뉘지 않습니다. 한 공간에서 모든 발표를 이어서 듣습니다. 오전에는 기업, 오후에는 인디를 다룹니다."
     },
     {
       "q": "일부 세션만 들어도 되나요?",
-      "a": "됩니다. 다만 오전 공통 세션은 직군과 무관하게 모두에게 해당하는 내용이라 가능하면 함께 들으시길 권합니다."
+      "a": "됩니다. 세션은 35분, 쉬는 시간은 15분이라 중간에 드나드셔도 됩니다. 다만 럭키 드로우 응모에는 도장 세 개가 필요해 최소 세 세션은 들으셔야 합니다."
+    },
+    {
+      "q": "신청은 언제부터 하나요?",
+      "a": "10월 초에 이 페이지에서 사전 신청을 받고 10월 24일 (토)에 마감합니다. 지금은 수요조사만 받고 있습니다."
     },
     {
       "q": "발표 자료는 공개되나요?",

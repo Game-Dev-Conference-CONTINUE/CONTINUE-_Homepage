@@ -91,7 +91,7 @@ export default async function SessionPage({ params }: { params: Promise<{ slug: 
 
           {/* 이 행사의 모든 발표가 같은 구조를 따른다는 것을 세션 페이지에서도 알린다. */}
           <section className="mt-14 border-t border-line pt-10">
-            <h2 className="text-sm tracking-wider text-dim">이 발표가 지나는 네 칸</h2>
+            <h2 className="text-sm tracking-wider text-dim">이 발표가 지나는 칸</h2>
             <ol className="mt-5 grid gap-3 sm:grid-cols-2">
               {content.structure.map((st) => (
                 <li key={st.no} className="border border-line p-4">

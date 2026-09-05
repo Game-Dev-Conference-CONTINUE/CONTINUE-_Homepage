@@ -87,13 +87,16 @@ export function Button({
   );
 }
 
-/** 트랙·구분을 나타내는 작은 표식. 색은 마젠타 하나뿐이고 모양으로만 구분한다. */
+/**
+ * 주제·구분을 나타내는 작은 표식. 색은 마젠타 하나뿐이다.
+ * 강조할 때도 면을 채우지 않고 테두리와 글자색만 마젠타로 바꾼다.
+ */
 export function Tag({ children, strong = false }: { children: ReactNode; strong?: boolean }) {
   return (
     <span
       className={
         "inline-block px-2 py-1 text-xs font-bold " +
-        (strong ? "bg-accent text-bg" : "border border-line text-muted")
+        (strong ? "border border-accent text-accent" : "border border-line text-muted")
       }
     >
       {children}
